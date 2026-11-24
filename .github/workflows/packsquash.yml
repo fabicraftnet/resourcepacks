@@ -1,0 +1,55 @@
+name: Optimize resource pack
+on:
+  push:
+    branches:
+      - main   # change to your default branch
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  packsquash:
+    name: Optimize resource pack
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # A non-shallow repository clone is required
+
+      - name: Prepare output directory
+        run: mkdir -p /tmp/out
+
+      - name: Run PackSquash (Christmas)
+        uses: ComunidadAylas/PackSquash-action@v4
+        with:
+          packsquash_version: latest
+          options: |
+            pack_directory = 'christmas'
+            output_file_path = '/tmp/out/christmas.zip'
+          artifact_name: 'christmas.zip'
+
+      - name: Generate SHA-1 hashes
+        run: |
+          cd /tmp/out
+          for f in *.zip; do
+            sha1sum "$f" | cut -d' ' -f1 > "$f.sha1"
+          done
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: /tmp/out
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

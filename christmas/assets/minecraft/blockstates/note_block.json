@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "instrument=custom_head":
+      { "model": "block/custom_note" },
+    "instrument=chime,note=1":
+    { "model": "block/joulu_1" },
+    "instrument=chime,note=2":
+    { "model": "block/joulu_2" },
+    "instrument=chime,note=3":
+    { "model": "block/joulu_3" },
+    "instrument=chime,note=4":
+    { "model": "block/joulu_4" },
+    "instrument=chime,note=5":
+    { "model": "block/joulu_5" },
+    "instrument=chime,note=6":
+    { "model": "block/joulu_6" },
+    "instrument=chime,note=7":
+    { "model": "block/joulu_7" },
+    "instrument=chime,note=8":
+    { "model": "block/joulu_8" },
+    "instrument=chime,note=9":
+    { "model": "block/joulu_9" },
+    "instrument=chime,note=10":
+    { "model": "block/joulu_10" },
+    "instrument=chime,note=11":
+    { "model": "block/joulu_11" },
+    "instrument=chime,note=12":
+    { "model": "block/joulu_12" },
+    "instrument=chime,note=13":
+    { "model": "block/joulu_13" },
+    "instrument=chime,note=14":
+    { "model": "block/joulu_14" },
+    "instrument=chime,note=15":
+    { "model": "block/joulu_15" },
+    "instrument=chime,note=16":
+    { "model": "block/joulu_16" },
+    "instrument=chime,note=17":
+    { "model": "block/joulu_17" },
+    "instrument=chime,note=18":
+    { "model": "block/joulu_18" },
+    "instrument=chime,note=19":
+    { "model": "block/joulu_19" },
+    "instrument=chime,note=20":
+    { "model": "block/joulu_20" },
+    "instrument=chime,note=21":
+    { "model": "block/joulu_21" },
+    "instrument=chime,note=22":
+    { "model": "block/joulu_22" },
+    "instrument=chime,note=23":
+    { "model": "block/joulu_23" },
+    "instrument=chime,note=24":
+    { "model": "block/joulu_24" },
+
+    "":  { "model": "block/note_block" }
+  }
+}
